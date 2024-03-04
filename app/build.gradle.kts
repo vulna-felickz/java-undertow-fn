@@ -24,7 +24,7 @@ dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
 
-    implementation("io.undertow:undertow-core:2.3.9.Final")
+    implementation("io.undertow:undertow-core:1.4.1.Final")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
