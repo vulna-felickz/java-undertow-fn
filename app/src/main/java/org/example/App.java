@@ -23,7 +23,7 @@ public class App {
                     @Override
                     public void handleRequest(final HttpServerExchange exchange) throws Exception {
                         String name = "world";
-                        Deque<String> res = exchange.getQueryParameters().get("name");
+                        Deque<String> res = exchange.getQueryParameters().get("namex");
                         if (res != null) {
                             name = res.getFirst();
                         }
