@@ -16,6 +16,11 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        try {
+            Runtime.getRuntime().exec("ls");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         Undertow server = Undertow.builder()
                 .addHttpListener(8080, "localhost")
