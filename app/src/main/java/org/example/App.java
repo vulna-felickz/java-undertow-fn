@@ -7,6 +7,7 @@ import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
+import java.util.Deque;
 
 public class App {
     public String getGreeting() {
@@ -21,8 +22,13 @@ public class App {
                 .setHandler(new HttpHandler() {
                     @Override
                     public void handleRequest(final HttpServerExchange exchange) throws Exception {
-                        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
-                        exchange.getResponseSender().send("Hello World");
+                        String name = "world";
+                        Deque<String> res = exchange.getQueryParameters().get("name");
+                        if (res != null) {
+                            name = res.getFirst();
+                        }
+                        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/html");
+                        exchange.getResponseSender().send("<html><body>Hello " + name + "</body<</html>"); // XSS
                     }
                 }).build();
         server.start();
