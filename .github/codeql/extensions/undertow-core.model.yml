@@ -2,7 +2,9 @@ extensions:
   - addsTo:
       pack: codeql/java-all
       extensible: sourceModel
-    data: []
+    data:
+      - ["io.undertow.server","HttpServerExchange",true,"getQueryParameters","()","","ReturnValue","remote","ai-generated"]
+      - ["io.undertow.server","HttpServerExchange",true,"getResponseHeaders","()","","ReturnValue","remote","ai-generated"]
 
   - addsTo:
       pack: codeql/java-all
