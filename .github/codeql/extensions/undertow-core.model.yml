@@ -10,7 +10,6 @@ extensions:
       pack: codeql/java-all
       extensible: sinkModel
     data:
-      - ["io.undertow.io","Sender",true,"send","(String)","","Argument[0]","request-forgery","manual"]
       - ["io.undertow.io","Sender",true,"send","(String)","","Argument[0]","js-injection","manual"]
       - ["io.undertow.io","Sender",true,"send","(String)","","Argument[0]","html-injection","manual"]
       - ["io.undertow.util","HeaderMap",true,"put","(HttpString,String)","","Argument[0]","response-splitting","manual"]
